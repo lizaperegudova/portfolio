@@ -1227,6 +1227,96 @@ em { font-family: var(--serif); font-style: italic; color: var(--text); font-siz
 .footer__links a:hover { color: var(--text); }
 
 /* ============================================
+   PRIVACY PAGE
+   ============================================ */
+.privacy {
+  padding: 160px 40px 100px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.privacy__title {
+  font-family: var(--display);
+  font-size: clamp(48px, 7vw, 80px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 64px;
+}
+
+.privacy__title em {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+.privacy__section {
+  margin-bottom: 48px;
+}
+
+.privacy__section h2 {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.privacy__section p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-dim);
+  margin-bottom: 14px;
+}
+
+.privacy__section p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy__section strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.privacy__section a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: rgba(0,0,0,0.2);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.3s;
+}
+
+.privacy__section a:hover {
+  text-decoration-color: var(--text);
+}
+
+.privacy__section ul {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.privacy__section li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+  list-style: disc;
+}
+
+@media (max-width: 600px) {
+  .privacy {
+    padding: 120px 24px 80px;
+  }
+  .privacy__title {
+    margin-bottom: 48px;
+  }
+  .privacy__section {
+    margin-bottom: 36px;
+  }
+}
+
+/* ============================================
    SCROLL REVEAL
    ============================================ */
 .reveal {
