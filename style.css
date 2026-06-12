@@ -2237,6 +2237,8 @@ em { font-family: var(--serif); font-style: italic; color: var(--text); font-siz
   .work__grid {
     grid-template-columns: 1fr;
   }
+
+  .project__meta { display: none; }
 }
 
 @media (max-width: 480px) {
