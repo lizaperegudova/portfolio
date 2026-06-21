@@ -140,6 +140,7 @@ em { font-family: var(--serif); font-style: italic; color: var(--text); font-siz
   justify-content: space-between;
   align-items: center;
   padding: 16px 40px;
+  height: 77px;
 }
 
 .nav__name {
@@ -1973,6 +1974,7 @@ em { font-family: var(--serif); font-style: italic; color: var(--text); font-siz
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: auto;
     top: 12px;
     left: 12px;
     right: 12px;
