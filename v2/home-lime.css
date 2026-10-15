@@ -1,0 +1,38 @@
+/* Ink + citron: crisp Swiss typography with a sparing, electric lime signal. */
+.home-page--lime {
+  --paper: #fffefa;
+  --ink: #111210;
+  --lime: #c8f169;
+  --blue: #e4e9e0;
+  --rule: #dadbd3;
+  --muted: #64665f;
+  --lime-dark: #547121;
+  background: var(--paper);
+}
+.home-page--lime .site-nav { grid-template-columns: minmax(0, 1fr) auto auto; }
+.home-page--lime .site-nav__brand span,
+.home-page--lime .intro h1 span,
+.home-page--lime .section-heading h2 em,
+.home-page--lime .about-section h2 em { color: var(--lime-dark); }
+.home-page--lime .status-dot { background: #6a853c; box-shadow: 0 0 0 4px #e7f1d9; }
+.home-page--lime .intro__eyebrow { width: fit-content; padding: 8px 14px; border-radius: 999px; background: #e8f3d6; }
+.home-page--lime .work-card__visual { border: 1px solid rgba(17,18,16,.09); }
+.home-page--lime .work-card--productive .work-card__visual { background: #e8eddd; }
+.home-page--lime .work-card--astrum .work-card__visual { background: #e0e7ef; }
+.home-page--lime .work-card--daily .work-card__visual { background: #eee3dc; }
+.home-page--lime .work-card__number { display: grid; place-items: center; min-width: 30px; min-height: 26px; top: 14px; left: 14px; padding: 0 7px; background: var(--lime); color: var(--ink); }
+.home-page--lime .work-card__arrow { background: var(--lime); }
+.home-page--lime .capabilities { background: #151713; }
+.home-page--lime .capability-list span,
+.home-page--lime .section-heading--compact h2 em { color: var(--lime); }
+.home-page--lime .about-section__mark { color: #8ba953; }
+.home-page--lime .contact-section { background: var(--lime); }
+.home-page--lime .contact-section .eyebrow { color: #45542d; }
+.home-page--lime .contact-section__links { border-color: rgba(17,18,16,.3); }
+.home-page--lime .contact-section__cta { border-color: #52652c; }
+
+@media (max-width: 760px) {
+  .home-page--lime .site-nav { grid-template-columns: minmax(0, 1fr) auto; }
+  .home-page--lime .site-nav__links { grid-column: 1 / -1; grid-row: 2; }
+  .home-page--lime .site-nav__contact { grid-column: 2; grid-row: 1; }
+}

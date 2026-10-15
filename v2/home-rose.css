@@ -1,0 +1,32 @@
+/* Ink + guava: high-contrast editorial monochrome with a warm, vivid signature accent. */
+.home-page--rose {
+  --paper: #fbfaf8;
+  --ink: #171617;
+  --lime: #ff9a9d;
+  --blue: #f0dedb;
+  --rule: #dedbd8;
+  --muted: #666263;
+  --rose-dark: #bc596b;
+  background: var(--paper);
+}
+.home-page--rose .site-nav__brand span,
+.home-page--rose .intro h1 span,
+.home-page--rose .section-heading h2 em,
+.home-page--rose .about-section h2 em { color: var(--rose-dark); }
+.home-page--rose .status-dot { background: #c86b79; box-shadow: 0 0 0 4px #f7e5e5; }
+.home-page--rose .work-card__visual { border: 1px solid rgba(23,22,23,.08); }
+.home-page--rose .work-card--productive .work-card__visual { background: #eee8e2; }
+.home-page--rose .work-card--astrum .work-card__visual { background: #e5e7eb; }
+.home-page--rose .work-card--daily .work-card__visual { background: #f2e0dc; }
+.home-page--rose .work-card__number { display: grid; place-items: center; min-width: 30px; min-height: 26px; top: 14px; left: 14px; padding: 0 7px; background: var(--lime); color: var(--ink); }
+.home-page--rose .work-card__arrow { background: var(--lime); }
+.home-page--rose .capabilities { background: #1c1a1c; }
+.home-page--rose .capability-list span { color: #ffadaf; }
+.home-page--rose .section-heading--compact h2 em { color: #ffadaf; }
+.home-page--rose .about-section__mark { color: #d7808c; }
+.home-page--rose .contact-section { background: #f6b6b7; }
+.home-page--rose .contact-section .eyebrow { color: #614044; }
+.home-page--rose .contact-section__links { border-color: rgba(23,22,23,.32); }
+.home-page--rose .contact-section__cta { border-color: #5d3d40; }
+.home-page--rose .contact-section__cta:hover span { color: #fff; }
+

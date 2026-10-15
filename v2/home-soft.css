@@ -1,0 +1,41 @@
+/* A softer alternate palette for comparing art direction without changing the main homepage. */
+.home-page--soft {
+  --paper: #f7f5f2;
+  --ink: #292936;
+  --lime: #ded9ef;
+  --blue: #e4e8f4;
+  --rule: #dedbe2;
+  --muted: #706e7a;
+  --soft-sage: #dfe9e1;
+  --soft-peach: #f1e2da;
+  --soft-lilac: #e8e3f2;
+  background: var(--paper);
+}
+
+.home-page--soft .site-nav__brand { border-color: #aaa2bd; }
+.home-page--soft .site-nav__brand span { color: #8b789d; }
+.home-page--soft .intro h1 span,
+.home-page--soft .section-heading h2 em,
+.home-page--soft .about-section h2 em { color: #8b789d; }
+.home-page--soft .status-dot { background: #8da895; box-shadow: 0 0 0 4px #e4ece5; }
+.home-page--soft .work-card__visual { border-radius: 3px; }
+.home-page--soft .work-card--productive .work-card__visual { background: var(--soft-sage); }
+.home-page--soft .work-card--astrum .work-card__visual { background: var(--soft-lilac); }
+.home-page--soft .work-card--daily .work-card__visual { background: var(--soft-peach); }
+.home-page--soft .work-card__arrow { background: #d9d1e9; }
+.home-page--soft .capabilities { background: #eeedf2; color: var(--ink); }
+.home-page--soft .section-heading--compact .eyebrow,
+.home-page--soft .section-heading--compact > p { color: var(--muted); }
+.home-page--soft .section-heading--compact h2 em { color: #8b789d; }
+.home-page--soft .capability-list { border-color: #d7d3dd; }
+.home-page--soft .capability-list > div { border-color: #d7d3dd; }
+.home-page--soft .capability-list span { color: #8b789d; }
+.home-page--soft .about-section__mark { color: #a7bca9; }
+.home-page--soft .contact-section { background: #e6e1ef; }
+.home-page--soft .contact-section .eyebrow { color: #6e667b; }
+.home-page--soft .contact-section__links { border-color: #c5bece; }
+.home-page--soft .contact-section__cta { border-color: #777080; }
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page--soft *, .home-page--soft *::before, .home-page--soft *::after { transition-duration: .01ms !important; }
+}
