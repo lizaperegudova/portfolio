@@ -102,17 +102,21 @@ function initParallax() {
 // ============================================
 // NAV TRANSPARENCY ON SCROLL
 // ============================================
-const nav = document.querySelector('.nav');
-if (nav) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      nav.classList.add('is-scrolled');
-      nav.style.borderBottomColor = 'rgba(0,0,0,0.1)';
-    } else {
-      nav.classList.remove('is-scrolled');
-      nav.style.borderBottomColor = 'rgba(0,0,0,0.05)';
-    }
-  }, { passive: true });
+const navs = document.querySelectorAll('.nav, .site-nav');
+if (navs.length) {
+  const updateNavScrollState = () => {
+    navs.forEach(nav => {
+      if (window.scrollY > 50) {
+        nav.classList.add('is-scrolled');
+        nav.style.borderBottomColor = 'rgba(0,0,0,0.1)';
+      } else {
+        nav.classList.remove('is-scrolled');
+        nav.style.borderBottomColor = 'rgba(0,0,0,0.05)';
+      }
+    });
+  };
+  window.addEventListener('scroll', updateNavScrollState, { passive: true });
+  updateNavScrollState();
 }
 
 
@@ -122,12 +126,19 @@ if (nav) {
 function initBlobsInSection(container, blobSelector) {
   const blobs = container.querySelectorAll(blobSelector);
   if (blobs.length < 2) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  let w, h;
+  let w, h, blobOffsetX = 0, blobOffsetY = 0;
   function measure() {
     const r = container.getBoundingClientRect();
     w = r.width;
     h = r.height;
+    const blobParent = blobs[0].offsetParent;
+    if (blobParent) {
+      const parentRect = blobParent.getBoundingClientRect();
+      blobOffsetX = r.left - parentRect.left;
+      blobOffsetY = r.top - parentRect.top;
+    }
   }
   measure();
   window.addEventListener('resize', measure);
@@ -177,8 +188,8 @@ function initBlobsInSection(container, blobSelector) {
         s.x += (driftX - s.x) * 0.015;
         s.y += (driftY - s.y) * 0.015;
       }
-      blobs[i].style.left = s.x + 'px';
-      blobs[i].style.top = s.y + 'px';
+      blobs[i].style.left = (s.x + blobOffsetX) + 'px';
+      blobs[i].style.top = (s.y + blobOffsetY) + 'px';
     });
     requestAnimationFrame(update);
   }
@@ -186,7 +197,6 @@ function initBlobsInSection(container, blobSelector) {
 }
 
 function initBlobs() {
-  if (document.body.classList.contains('interior-page')) return;
   const hero = document.querySelector('.hero');
   if (hero) initBlobsInSection(hero, '.hero__blob');
 
