@@ -1,3 +1,35 @@
+// Reuse the original eased custom cursor on the homepage.
+const cursor = document.getElementById('cursor');
+if (cursor) {
+  let x = -100;
+  let y = -100;
+  let ringX = -100;
+  let ringY = -100;
+
+  document.addEventListener('pointermove', (event) => {
+    if (event.pointerType !== 'mouse') return;
+    x = event.clientX;
+    y = event.clientY;
+  });
+
+  const follow = () => {
+    ringX += (x - ringX) * 0.15;
+    ringY += (y - ringY) * 0.15;
+    cursor.style.transform = `translate(${ringX}px, ${ringY}px)`;
+    requestAnimationFrame(follow);
+  };
+  follow();
+
+  document.querySelectorAll('a:not(.work-card), button').forEach((element) => {
+    element.addEventListener('mouseenter', () => cursor.classList.add('is-hover'));
+    element.addEventListener('mouseleave', () => cursor.classList.remove('is-hover'));
+  });
+  document.querySelectorAll('.work-card').forEach((element) => {
+    element.addEventListener('mouseenter', () => cursor.classList.add('is-project'));
+    element.addEventListener('mouseleave', () => cursor.classList.remove('is-project'));
+  });
+}
+
 // Bring back the original depth-of-field hover effect for the homepage headline.
 document.querySelectorAll('.intro__line--interactive').forEach((line) => {
   const characters = [...line.textContent];

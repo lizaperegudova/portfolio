@@ -3,12 +3,13 @@
 // ============================================
 function initCursor() {
   const cursor = document.getElementById('cursor');
-  if (!cursor || document.body.classList.contains('interior-page')) return;
+  if (!cursor) return;
 
   let cx = -100, cy = -100; // cursor position (instant)
   let rx = -100, ry = -100; // ring position (lerped)
 
-  document.addEventListener('mousemove', (e) => {
+  document.addEventListener('pointermove', (e) => {
+    if (e.pointerType !== 'mouse') return;
     cx = e.clientX;
     cy = e.clientY;
   });
@@ -23,12 +24,12 @@ function initCursor() {
   update();
 
   // Hover states
-  document.querySelectorAll('a:not(.project), button, .nav__cta').forEach(el => {
+  document.querySelectorAll('a:not(.project):not(.work-card), button, .nav__cta').forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('is-hover'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('is-hover'));
   });
 
-  document.querySelectorAll('.project').forEach(el => {
+  document.querySelectorAll('.project, .work-card').forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('is-project'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('is-project'));
   });
